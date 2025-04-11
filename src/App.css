@@ -1,0 +1,457 @@
+.App {
+  text-align: center;
+  background-color: #eeeffc;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.meditation-header {
+  background-color: #c5cbf7;
+  padding: 2rem 1rem;
+  color: white;
+}
+
+.meditation-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.meditation-header p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin: 1rem 0;
+}
+
+section {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.start-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #2980b9;
+}
+
+.breathing-exercise ol {
+  text-align: left;
+  max-width: 400px;
+  margin: 1rem auto;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 2rem;
+  background-color: #c5cbf7;
+  color: white;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode section {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+.dark-mode .meditation-header {
+  background-color: #333333;
+}
+
+.dark-mode .start-button {
+  background-color: #6f42c1;
+}
+
+.dark-mode .start-button:hover {
+  background-color: #563d7c;
+}
+
+.dark-mode footer {
+  background-color: #333333;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: clamp(10px, 2vw, 20px);
+  right: clamp(10px, 2vw, 20px);
+  z-index: 1000;
+}
+
+.theme-toggle button {
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 16px);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-mode .theme-toggle button {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+.theme-toggle-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .theme-toggle-button {
+  background-color: #333;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.1);
+}
+
+.section-toggle {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-toggle button {
+  padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 20px);
+  margin: 0 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-toggle button.active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  padding: clamp(10px, 2vw, 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .modes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .modes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-content {
+    padding: 0.5rem;
+  }
+  
+  .section-toggle {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+  
+  .section-toggle button {
+    margin: 5px 0;
+  }
+  
+  .theme-toggle {
+    position: static;
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
+.mode-card {
+  background: white;
+  border-radius: 10px;
+  padding: clamp(15px, 3vw, 20px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.dark-mode .mode-card {
+  background: #2d2d2d;
+}
+
+.mode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.mode-card.selected {
+  box-shadow: 0 0 0 2px #3498db;
+  border: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mode-icon {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mode-card h3 {
+  margin: 10px 0;
+  color: #333;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+.dark-mode .mode-card h3 {
+  color: #fff;
+}
+
+.mode-card p {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #666;
+  margin: 0;
+}
+
+.dark-mode .mode-card p {
+  color: #aaa;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.dark-mode .loading {
+  color: #aaa;
+}
+
+.nature-meditation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.nature-meditation .meditation-guide {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.nature-meditation .instructions {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.nature-meditation .mode-navigation {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.box-breathing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.breathing-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.breathing-content h1 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.duration-selector {
+  margin: 2rem 0;
+}
+
+.animation-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+
+.breathing-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125px;
+  height: 125px;
+  background-color: #3498db;
+  border-radius: 10px;
+  transition-property: width, height;
+  transition-timing-function: ease-in-out;
+  transition-duration: var(--animation-duration, 4s);
+}
+
+.breathing-box.expanding,
+.breathing-box.expanded {
+  width: 250px;
+  height: 250px;
+}
+
+.breathing-box.contracting {
+  width: 100px;
+  height: 100px;
+}
+
+.breathing-box.contracted {
+  width: 100px;
+  height: 100px;
+}
+
+.phase-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -45px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.timer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -45px;
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.control-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color: #2980b9;
+}
+
+.control-button.active {
+  background-color: #e74c3c;
+}
+
+.dark-mode .phase-text {
+  color: #fff;
+}
+
+.dark-mode .breathing-box {
+  background-color: #6fc2ff;
+}
+
+.breathing-info {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 1.5rem 0;
+}
+
+.dark-mode .breathing-info {
+  color: #aaa;
+}

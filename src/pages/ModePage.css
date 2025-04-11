@@ -1,0 +1,115 @@
+.mode-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: inherit;
+}
+
+.mode-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mode-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.breathing-exercise {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.session-list, .sound-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.dark-mode .mode-page {
+  color: white;
+}
+
+.dark-mode .back-button {
+  background: #333;
+  color: white;
+}
+
+.meditation-guide {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.meditation-guide h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.dark-mode .meditation-guide h2 {
+  color: #fff;
+}
+
+.timer {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  color: #3498db;
+}
+
+.dark-mode .timer {
+  color: #6fc2ff;
+}
+
+.instructions {
+  text-align: left;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.instructions p {
+  margin: 1rem 0;
+}
+
+.next-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.next-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.dark-mode .next-button {
+  background-color: #6fc2ff;
+}
+
+.dark-mode .next-button:disabled {
+  background-color: #4a4a4a;
+}
